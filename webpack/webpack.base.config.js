@@ -11,8 +11,20 @@ module.exports = {
     filename: 'js/[name].[hash].js',
     path: path.resolve(BUILD_PATH)
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader"
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|build)/,
