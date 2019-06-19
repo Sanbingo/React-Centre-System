@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ROOT_PATH = path.resolve(__dirname, '..');
 const BUILD_PATH = path.resolve(__dirname, '../build');
 
@@ -34,6 +35,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(ROOT_PATH, 'index.html'),
         }),
