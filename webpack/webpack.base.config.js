@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(BUILD_PATH),
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.json', '.css'],
     },
     module: {
         rules: [
@@ -31,6 +31,10 @@ module.exports = {
                 test: /\.(js|ts)x?$/,
                 exclude: /(node_modules|build)/,
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },

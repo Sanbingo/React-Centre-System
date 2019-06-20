@@ -1,0 +1,6 @@
+.loginContainer {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
