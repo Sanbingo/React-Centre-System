@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --config webpack/webpack.dev.config.js --mode development",
-    "build": "webpack --config webpack/webpack.prod.config.js --mode production",
+    "build": "webpack --config webpack/webpack.prod.config.js --mode production -w",
     "start": "webpack-dev-server --open --config webpack/webpack.dev.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:api": "nodemon server/api/index.js",
+    "server:index": "nodemon server/index",
+    "launch": "npm run build & npm run server:api & npm run server:index"
   },
   "keywords": [],
   "author": "",
@@ -44,6 +47,13 @@
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.3",
+    "http-proxy": "^1.17.0",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.6.0",
+    "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0"
